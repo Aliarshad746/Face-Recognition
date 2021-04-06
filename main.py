@@ -48,7 +48,6 @@ FRmodel.compile(optimizer = 'adam', loss = triplet_loss, metrics = ['accuracy'])
 load_weights_from_FaceNet(FRmodel)
 
 database = {}
-database["anshul"] = img_to_encoding("images/anshul.png", FRmodel)
 database["younes"] = img_to_encoding("images/younes.jpg", FRmodel)
 database["tian"] = img_to_encoding("images/tian.jpg", FRmodel)
 database["andrew"] = img_to_encoding("images/andrew.jpg", FRmodel)
@@ -58,7 +57,6 @@ database["bertrand"] = img_to_encoding("images/bertrand.jpg", FRmodel)
 database["kevin"] = img_to_encoding("images/kevin.jpg", FRmodel)
 database["benoit"] = img_to_encoding("images/benoit.jpg", FRmodel)
 database["arnaud"] = img_to_encoding("images/arnaud.jpg", FRmodel)
-database["shivam"] = img_to_encoding("images/shivam.png", FRmodel)
 database["tom"] = img_to_encoding("images/tom.png", FRmodel)
 
 
@@ -75,7 +73,6 @@ def verify(image_path, identity, database, model):
         print("It's " + str(identity))
         door_open = True
     else:
-        print("It's not " + str(identity))
         door_open = False
 
     return door_open
